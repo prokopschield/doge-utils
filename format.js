@@ -50,6 +50,12 @@ function format(...args) {
                     v: arg.mention,
                 });
             }
+            else if ('block' in arg) {
+                ret.push({
+                    t: 'block',
+                    v: arg.block,
+                });
+            }
             else {
                 preformat(ret, ...Object.keys(arg).map(key => arg[key]));
             }
