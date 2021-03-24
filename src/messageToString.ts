@@ -1,12 +1,26 @@
 import { FormattedMessageChunk } from './format';
 
+/**
+ * Converts message tokens to string
+ *
+ * @export
+ * @param {FormattedMessageChunk[]} tokens
+ * @param {{
+ * 	plain: boolean;
+ * }} [{
+ * 	plain,
+ * }={
+ * 	plain: false,
+ * }]
+ * @return {String} 
+ */
 export function messageToString (tokens: FormattedMessageChunk[], {
 	plain,
 }: {
 	plain: boolean;
 } = {
 	plain: false,
-}) {
+}): string {
 	return tokens
 		.map(
 			plain

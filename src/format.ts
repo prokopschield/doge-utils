@@ -56,6 +56,12 @@ interface UMC_Undefined {
 	[index: string]: string;
 }
 
+/**
+ * @typedef {Object} FormattedMessageChunk
+ *
+ * @property {String} t Type - e.g. link, mention, text
+ * @property {String} v The string value
+ */
 export interface FormattedMessageChunk {
 	t:
 		  'text'
@@ -71,6 +77,14 @@ function preformat (ret: FormattedMessageChunk[], ...args: UnformattedMessageChu
 	format(...args).forEach((a: FormattedMessageChunk) => ret.push(a));
 }
 
+
+/**
+ *
+ *
+ * @export
+ * @param {...UnformattedMessageChunk[]} args
+ * @return {Array<FormattedMessageChunk>}  {FormattedMessageChunk[]}
+ */
 export function format (...args: UnformattedMessageChunk[]): FormattedMessageChunk[] {
 	const ret: FormattedMessageChunk[] = [];
 	for (let i=0; i<args.length; ++i) {
