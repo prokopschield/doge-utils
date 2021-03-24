@@ -1,8 +1,8 @@
 {
 	"name": "doge-utils",
-	"version": "0.0.5",
+	"version": "0.0.6",
 	"description": "Tools for the DogeHouse API",
-	"main": "index.js",
+	"main": "lib/index.js",
 	"scripts": {
 		"test": "node lib/index"
 	},
