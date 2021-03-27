@@ -18,6 +18,8 @@
  * 
 */
 
+import { stringToMessage } from './stringToMessage';
+
 export type UnformattedMessageChunk = UnformattedMessageChunkLiteral | UnformattedMessageChunkObject;
 
 export type UnformattedMessageChunkLiteral = number | string | bigint | boolean;
@@ -129,14 +131,16 @@ export function format (...args: UnformattedMessageChunk[]): FormattedMessageChu
 					t: 'block',
 					v: arg.block,
 				});
+			} else if ('text' in arg) {
+				ret.push({
+					t: 'text',
+					v: arg.text,
+				});
 			} else {
 				preformat(ret, ...Object.keys(arg).map(key => (arg as UMC_Undefined)[key]));
 			}
 		} else if (arg) {
-			ret.push({
-				t: 'text',
-				v: arg.toString(),
-			});
+			preformat(ret, stringToMessage(arg.toString()));
 		}
 	}
 	return ret;

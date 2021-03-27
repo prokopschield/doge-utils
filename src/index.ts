@@ -6,6 +6,7 @@ import {
 	FormattedMessageChunk,
 } from './format';
 
+import { stringToMessage } from './stringToMessage';
 import { messageToString } from './messageToString';
 
 export {
@@ -15,5 +16,6 @@ export {
 	UnformattedMessageChunkObject,
 	FormattedMessageChunk,
 
+	stringToMessage,
 	messageToString,
 }
