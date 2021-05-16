@@ -15,7 +15,7 @@ export function stringToMessage (text: string): FormattedMessageChunk[] {
 	.replace(/\%/g, 'SYM_PERCENT')
 	.replace(/\`([a-z0-9]+)\`/gi, (_, m) => `%B${m}%T`)
 	.replace(/\` *([a-z0-9]+) *\`/gi, (_, m) => `%B${m}%T`)
-	.replace(/\` *([^ ]+) *\`/gi, (_, m) => `%B${m}%T`)
+	.replace(/\` *([^`]+) *\`/gi, (_, m) => `%B${m}%T`)
 	.replace(/\:([a-z0-9]+)\:/gi, (_, m) => `%E${m}%T`)
 	.replace(/\@([a-zA-Z0-9]+)/gi, (_, m) => `%M${m}%T`)
 	.replace(/(https?\:\/\/[^ ]+)/gi, (_, m) => `%U${m}%T`)
