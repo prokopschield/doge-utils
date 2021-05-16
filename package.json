@@ -1,6 +1,6 @@
 {
 	"name": "doge-utils",
-	"version": "0.1.0-2",
+	"version": "0.1.0",
 	"description": "Tools for the DogeHouse API",
 	"main": "lib/index.js",
 	"scripts": {
